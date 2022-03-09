@@ -1,0 +1,23 @@
+Argocd config map for OpenShift OAuth integration 
+
+Add following sections and restart server pod
+
+route: true 
+rbac:
+openshiftOAuth:
+
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  server:
+    route: true
+  dex:
+    openshiftOAuth: true
+	------
+	------
+  rbac:
+    policy: |
+      g, system:cluste-admin,role:admin
