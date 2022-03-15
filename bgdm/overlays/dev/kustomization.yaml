@@ -1,0 +1,19 @@
+bases:
+- ../../base
+resources:
+- bgd-namespace.yaml
+patchesJson6902:
+  - target:
+      version: v1
+      group: apps
+      kind: Deployment
+      name: bgd
+      namespace: bgd-dev
+    path: bgd-deployment.yaml
+  - target:
+      version: v1
+      group: route.openshift.io
+      kind: Route
+      name: bgd
+      namespace: bgd-dev
+    path: bgd-route.yaml
