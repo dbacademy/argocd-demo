@@ -1,0 +1,3 @@
+- op: replace
+  path: /spec/host
+  value: bgd-dev.apps.rnd-icp.rnd.volvocars.net
